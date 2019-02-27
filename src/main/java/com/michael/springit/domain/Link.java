@@ -8,6 +8,9 @@ import lombok.NonNull;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 @Entity
 //this class will be a table
@@ -25,6 +28,6 @@ public class Link {
 
 
     //comments
-
-
+    @OneToMany(mappedBy =  "link")
+    private List<Comment> comment = new ArrayList<>();
 }
